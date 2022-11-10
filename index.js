@@ -163,13 +163,13 @@ async function run() {
 }
 run().catch((err) => console.log(err.name, err.message));
 
-//== get method for testing
+// get method for testing
 
 app.get("/", (req, res) => {
   res.send("WellCome to Roofsie Server");
 });
 
-// ==listen
+// listen
 
 app.listen(port, () => {
   console.log(`server is running on port :${port}`);
