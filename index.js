@@ -72,7 +72,7 @@ async function run() {
       res.send(result);
     });
 
-    //  ==get single items===
+    // For get a single services details
     app.get("/services/:id", async (req, res) => {
       const id = req.params.id;
       const query = { _id: ObjectId(id) };
@@ -85,7 +85,6 @@ async function run() {
     app.get("/reviews", verifyJWT, async (req, res) => {
       let query = {};
       const decoded = req.decoded;
-
       if (decoded.email !== req.query.email) {
         res.status(403).send({ message: "Unauthorize Access" });
       }
