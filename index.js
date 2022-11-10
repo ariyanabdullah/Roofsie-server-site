@@ -41,6 +41,8 @@ function verifyJWT(req, res, next) {
   });
 }
 
+// added run function for mongodb
+
 async function run() {
   try {
     const serviceCollection = client.db("roofsie").collection("services");
