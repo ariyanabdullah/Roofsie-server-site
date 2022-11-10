@@ -57,7 +57,7 @@ async function run() {
       res.send({ token });
     });
 
-    //   ==get item ==
+    // get method for getting all services item
     app.get("/services", async (req, res) => {
       const limit = parseInt(req.query.limit);
       const query = {};
