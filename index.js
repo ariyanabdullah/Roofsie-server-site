@@ -22,16 +22,14 @@ const client = new MongoClient(uri, {
   serverApi: ServerApiVersion.v1,
 });
 
-// Jwt veryfy function added
+// verify JWT fuction for verify jwt token
 
 function verifyJWT(req, res, next) {
   const authHeader = req.headers.authorization;
   if (!authHeader) {
     return res.status(401).send({ message: "Unauthorize Access" });
   }
-
   const token = authHeader.split(" ")[1];
-
   jwt.verify(token, process.env.TOKEN_SECRET, function (err, decoded) {
     if (err) {
       return res.status(401).send({ message: "Unauthorize Access" });
