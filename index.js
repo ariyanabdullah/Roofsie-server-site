@@ -66,7 +66,7 @@ async function run() {
       res.send(result);
     });
 
-    // post a service
+    // Post method for Post a service
 
     app.post("/services", async (req, res) => {
       const service = req.body;
